@@ -29,6 +29,9 @@ import androidx.compose.material3.Text
 import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.Alignment
 
+import com.example.carilaundry.ui.feature.customer.notifikasi.NotifikasiCustomerScreen
+import com.example.carilaundry.ui.feature.customer.profil.ProfilScreen
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavGraph() {
@@ -120,17 +123,29 @@ fun NavGraph() {
                 )
             }
 
+            composable("notifications") {
+                NotifikasiCustomerScreen(
+                    onBack = { navController.popBackStack() },
+                    onDetailClick = { id -> navController.navigate("customer/detail_pesanan/$id") }
+                )
+            }
+
             composable("customer/orders") {
                 CustomerOrdersScreen(
                     onBack = { navController.popBackStack() },
-                    onOpenOrder = { orderId -> /* TODO: navigate to order detail if exists */ }
+                    onOpenOrder = { orderId -> /*  */ }
                 )
             }
 
             composable("customer/profile") {
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Text(text = "asdasd")
-                }
+                ProfilScreen(
+                    onBack = { navController.popBackStack() },
+                    onLogout = {
+                        navController.navigate("customer/login") {
+                            popUpTo("customer/home") { inclusive = true }
+                        }
+                    }
+                )
             }
 
             composable("customer/deskripsi/{id}") { backStackEntry ->
@@ -153,7 +168,6 @@ fun NavGraph() {
             }
 
             composable("customer/order_success/{id}") { backStackEntry ->
-                val id = backStackEntry.arguments?.getString("id")
                 OrderSuccessScreen(
                     //id londri
                     onBack = { navController.popBackStack() },
