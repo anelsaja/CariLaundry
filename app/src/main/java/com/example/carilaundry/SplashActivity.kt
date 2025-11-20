@@ -27,9 +27,9 @@ class SplashActivity : ComponentActivity() {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         // Replace with your app logo resource if available
                         Image(
-                            painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                            painter = painterResource(id = R.drawable.icon),
                             contentDescription = "Logo",
-                            modifier = Modifier.size(120.dp)
+                            modifier = Modifier.size(500.dp)
                         )
                     }
                 }
