@@ -32,7 +32,7 @@
                 android:layout_height="20dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
-                android:src="@drawable/ic_launcher_foreground"
+                android:src="@drawable/outline_favorite_24"
                 app:tint="@android:color/white"/>
             <TextView
                 android:id="@+id/tvNamaFav"
