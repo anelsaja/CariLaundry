@@ -13,6 +13,15 @@
         android:theme="@style/Theme.CariLaundry"
         tools:targetApi="31">
         <activity
+            android:name=".activity_profile"
+            android:exported="false" />
+        <activity
+            android:name=".Transaksi"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".FavoriteActivity"
             android:exported="false" />
         <activity
