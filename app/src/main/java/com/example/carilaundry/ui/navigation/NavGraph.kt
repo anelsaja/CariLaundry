@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.carilaundry.ui.feature.auth.RoleSelectionScreen
 import com.example.carilaundry.ui.feature.customer.login.CustomerLoginScreen
 import com.example.carilaundry.ui.feature.customer.register.CustomerRegisterScreen
+import com.example.carilaundry.ui.feature.customer.home.CustomerHomeScreen
 import com.example.carilaundry.ui.feature.owner.login.OwnerLoginScreen
 import com.example.carilaundry.ui.feature.owner.register.OwnerRegisterScreen
 
@@ -18,7 +19,8 @@ fun NavGraph() {
         composable("customer/login") {
             CustomerLoginScreen(
                 onLogin = { email, password ->
-//                    blom
+                    if(email == "customer" && password == "123")
+                    navController.navigate("customer/home")
                 },
                 onRegisterClicked = { navController.navigate("roleSelection") },
                 onSwitchToOwner = { navController.navigate("owner/login") }
@@ -28,7 +30,9 @@ fun NavGraph() {
         composable("owner/login") {
             OwnerLoginScreen(
                 onLogin = { email, password ->
-//                    blom
+                    if (email == "owner" && password == "123") {
+                        navController.navigate("owner/home")
+                    }
                 },
                 onRegisterClicked = { navController.navigate("roleSelection") },
                 onSwitchToCustomer = { navController.navigate("customer/login") }
@@ -46,8 +50,9 @@ fun NavGraph() {
         composable("customer/register") {
             CustomerRegisterScreen(
                 onRegister = { name, email, phone, password ->
-//                    blom
-                    navController.popBackStack("customer/login", false)
+                    navController.navigate("customer/home") {
+                        popUpTo("customer/login") { inclusive = true }
+                    }
                 },
                 onSignInClicked = { navController.popBackStack() }
             )
@@ -56,10 +61,20 @@ fun NavGraph() {
         composable("owner/register") {
             OwnerRegisterScreen(
                 onRegister = { businessName, ownerName, email, phone, address, password ->
-//                    blom
-                    navController.popBackStack("owner/login", false)
+                    navController.navigate("owner/home") {
+                        popUpTo("owner/login") { inclusive = true }
+                    }
                 },
                 onSignInClicked = { navController.popBackStack() }
+            )
+        }
+
+        composable("customer/home") {
+            CustomerHomeScreen(
+                onItemClick = { id -> /* navigate to detail if needed */ },
+                onOpenFavorites = { navController.navigate("favorites") },
+                onOpenNotifications = { navController.navigate("notifications") },
+                onOpenProfile = { navController.navigate("customer/profile") }
             )
         }
     }
