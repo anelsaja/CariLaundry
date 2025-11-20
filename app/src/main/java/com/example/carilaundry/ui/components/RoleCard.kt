@@ -92,7 +92,7 @@ fun RoleCardPreview() {
         RoleCard(
             icon = Icons.Filled.Person,
             title = "Customer",
-            description = "Contoh deskripsi singkat untuk pelanggan.",
+            description = "asd",
             onClick = {}
         )
     }

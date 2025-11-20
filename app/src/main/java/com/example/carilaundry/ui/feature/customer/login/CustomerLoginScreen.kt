@@ -75,6 +75,8 @@ fun CustomerLoginScreen(
                 Text(text = "Masuk")
             }
 
+
+
             Spacer(modifier = Modifier.height(12.dp))
 
             TextButton(onClick = onRegisterClicked, modifier = Modifier.wrapContentWidth()) {
@@ -85,6 +87,7 @@ fun CustomerLoginScreen(
 
             TextButton(onClick = onSwitchToOwner, modifier = Modifier.wrapContentWidth()) {
                 Text(text = "Masuk sebagai Owner")
+
             }
         }
     }
