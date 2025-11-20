@@ -1,47 +1,33 @@
 package com.example.carilaundry
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.carilaundry.ui.theme.CariLaundryTheme
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var rvLaundry: RecyclerView
+    private val listLaundry = ArrayList<LaundryModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            CariLaundryTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
+        setContentView(R.layout.activity_main)
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        rvLaundry = findViewById(R.id.rvLaundry)
+        rvLaundry.setHasFixedSize(true)
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CariLaundryTheme {
-        Greeting("Android")
+        // Mengatur Layout menjadi GRID 2 Kolom
+        rvLaundry.layoutManager = GridLayoutManager(this, 2)
+
+        // Isi Data Dummy
+        listLaundry.add(LaundryModel("Laundry Wertwer", "Jalan Senopati No 3", "+62 813-2707-4781", "135 m", R.drawable.cari))
+        listLaundry.add(LaundryModel("Laundry Bersih", "Jalan Mawar No 10", "+62 812-3333-4444", "200 m", R.drawable.cari))
+        listLaundry.add(LaundryModel("Cuci Kilat", "Jalan Melati No 5", "+62 811-5555-6666", "500 m", R.drawable.cari))
+        listLaundry.add(LaundryModel("Mama Laundry", "Jalan Anggrek No 12", "+62 815-7777-8888", "1.2 km", R.drawable.cari))
+
+        // Pasang Adapter
+        val adapter = LaundryAdapter(listLaundry)
+        rvLaundry.adapter = adapter
     }
 }

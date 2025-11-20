@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgLaundryFav"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/cari"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4A89C8"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/btnLove"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/ic_launcher_foreground"
+                app:tint="@android:color/white"/>
+            <TextView
+                android:id="@+id/tvNamaFav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/btnLove"
+                android:layout_marginEnd="8dp"
+                android:text="Laundry Wertwer"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tvAlamatFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvNamaFav"
+                android:layout_marginTop="4dp"
+                android:text="Jalan Senopati No. 3, Kampungin"
+                android:textColor="#E0E0E0"
+                android:textSize="10sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAlamatFav"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/outline_favorite_24"
+                    app:tint="#E0E0E0"/>
+                <TextView
+                    android:id="@+id/tvPhoneFav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="+62 813-2707-4781"
+                    android:textColor="#E0E0E0"
+                    android:textSize="10sp"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

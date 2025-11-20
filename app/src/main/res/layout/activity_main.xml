@@ -29,9 +29,9 @@
             android:textSize="18sp"
             android:layout_marginStart="12dp"/>
 
-        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_launcher_foreground" android:layout_marginEnd="16dp" app:tint="@color/black"/>
-        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_launcher_foreground" android:layout_marginEnd="16dp" app:tint="@color/black"/>
-        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_launcher_foreground" app:tint="@color/black"/>
+        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/outline_favorite_24" android:layout_marginEnd="16dp" app:tint="@color/black"/>
+        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/outline_notifications_24" android:layout_marginEnd="16dp" app:tint="@color/black"/>
+        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/outline_logout_24" app:tint="@color/black"/>
     </LinearLayout>
 
     <EditText
@@ -81,21 +81,21 @@
             android:layout_width="0dp"
             android:layout_height="28dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_launcher_foreground"
+            android:src="@drawable/baseline_home_24"
             app:tint="@color/black"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="28dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_launcher_foreground"
+            android:src="@drawable/ic_swap"
             app:tint="@color/black"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="28dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_launcher_foreground"
+            android:src="@drawable/outline_account_circle_24"
             app:tint="@color/black"/>
     </LinearLayout>
 
