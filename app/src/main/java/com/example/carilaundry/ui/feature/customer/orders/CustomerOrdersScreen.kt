@@ -37,7 +37,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.carilaundry.ui.theme.CariLaundryTheme
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.autoMirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowBack
 
 
 data class CustomerOrder(
@@ -90,7 +90,7 @@ fun CustomerOrdersScreen(
                 title = { Text(text = "Daftar Pesanan", fontWeight = FontWeight.SemiBold) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                        Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent)
