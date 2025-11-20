@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
         // Timer 3 Detik
         Handler(Looper.getMainLooper()).postDelayed({
             // Setelah 3 detik, pindah ke MainActivity
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish() // Agar user tidak bisa kembali ke splash screen
         }, 3000)
